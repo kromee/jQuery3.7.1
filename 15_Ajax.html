@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="js/jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+
+     
+       <script>
+   let users = [];
+        const listarUsuiarios = ()=>{
+            $.ajax({
+                type:'GET',
+                url:'https://jsonplaceholder.typicode.com/users',
+                contentType:'application/json',
+                async:true,
+                beforeSend: function(){
+                    console.log('antes de la peticion http')
+                },
+                success:function(data){
+                 users = data;
+
+                },complete:function(){
+                    console.log(`solicitud completada: ${users.length} usuario listados`)
+
+                },
+                 error: function(error){
+                    console.log(error)
+                }
+            })
+        }
+           $(Document).ready(function($){
+            listarUsuiarios();
+        });
+       </script>
+    
+    </body>
+</html>

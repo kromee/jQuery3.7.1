@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="js/jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+        ¿Válido? <input type="checkbox" class="miClase" id="chkValido">
+        <script>
+            // attr() y prop() son intercambiables en la mayoría de casos.
+            $(document).ready(function ($) {
+                // $('#chkValido').prop('checked', true);
+                // $('#chkValido').attr('checked', false);
+                // console.log($('#chkValido'));
+                console.log($('#chkValido').prop('checked'));
+                console.log($('#chkValido').prop('className'));
+            });
+        </script>
+    
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="js/jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+
+     
+        <table id="tablapaises"></table>
+
+     <script>
+        const $tablapaises = $('#tablapaises'); 
+        let paises = [{
+            "id": 149,
+            "nombre": "Perú",
+            "capital": "Lima"
+        }, {
+            "id": 623,
+            "nombre": "España",
+            "capital": "Madrid"
+        }, {
+            "id": 923,
+            "nombre": "Ecuador",
+            "capital": "Quito"
+        }];
+
+        const CargarTabla =()=>{
+            let tabla =``;
+            $.each(paises,(indice,pais)=>{
+                tabla+=`<tr>`;
+                    tabla += `<td>${pais.nombre}</td>`;
+                tabla += `<td>${pais.capital}</td>`;
+                tabla += `<td><button id='${pais.id}' data-pais = '${JSON.stringify(pais)}' class='otraClase verId'>Ver Id</button></td>`;
+                tabla += `</tr>`;
+            });
+           $tablapaises.html(tabla);
+
+           $('.otraClase').each(function(){
+               // console.log(this);
+                //console.log($(this));
+                //console.log($(this)[0]);
+           });
+
+        }
+
+        $(document).on('click','.verId', function(){
+        let paisSeleccionado = $(this).data("pais");
+        console.log(paisSeleccionado);
+        });   
+
+
+
+        $(Document).ready(function($){
+            CargarTabla();
+        });
+
+     </script>
+    
+    </body>
+</html>

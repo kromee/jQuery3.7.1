@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="js/jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+        <p id="miParrafo" >Evento click</p>
+        <button id="button1">Click aquí</button>
+     <script>
+        $(function(){
+            let estado = false;
+        $('#button1').click(()=>{
+            if(estado){
+                $('#miParrafo').show();
+            }else{
+                 $('#miParrafo').hide();
+            }
+            estado = !estado;
+           
+        });  
+        });
+     </script>
+    
+    </body>
+</html>

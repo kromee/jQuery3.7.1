@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="js/jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+       <ul>
+        <li>Larabel</li>
+        <li>Sprint</li>
+        <li>Django</li>
+       </ul>
+     <script>
+        $("li").each(function(index, element){
+            //console.log(index);
+            console.log($(this).text());
+            console.log(`${index}=>${$(this).text()} `);
+        });
+
+
+        let lenguajes = ["PHP", "Python", "C#", "JavaScript"];
+        $.each(lenguajes, (indice, lenguaje)=>{
+            console.log(`[${indice}]=>${[lenguaje]}`);
+        })
+
+        let dimensiones = $.map(lenguajes,(lenguaje)=>lenguaje.length);
+        console.log(dimensiones);
+        
+        console.log($.isArray(lenguajes));
+
+        console.log($.isArray(dimensiones));
+
+        
+     </script>
+    
+    </body>
+</html>
